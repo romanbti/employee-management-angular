@@ -1,0 +1,76 @@
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-4 col-xl-3 mx-auto ">
+    <h2 class="font-weight-bold text-primary text-center mb-3">Employee Form</h2>
+
+    <form [formGroup]="employeeForm"(ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+    <label for= "fullname">Full Name</label>
+    <input formControlName="fullname" type="text" class="form-control" required placeholder="Full Name">
+    <span
+    *ngIf="!employeeForm.get('fullname').valid && employeeForm.get('fullname').touched"
+    class="help-block">
+    <span *ngIf="employeeForm.get('fullname').errors['required']">Name cannot be empty!</span>
+     </span>
+</div>
+   
+    <div class="form-group">
+        <label for= "code">Code</label>
+        <input formControlName="code" type="number" class="form-control" required placeholder="Code">
+     </div>
+     <div class="form-group">
+        <label for= "date">Joined Date </label> 
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker >
+        <input matInput [matDatepicker]="picker" formControlName="date" class="form-control date-picker" placeholder="Choose a date">
+       </div>
+     <div class="form-group">
+        <label for= "email">Email</label>
+        <input formControlName="email" type="email" class="form-control" required placeholder="example@gmail.com">
+        <span
+              *ngIf="!employeeForm.get('email').valid && employeeForm.get('email').touched"
+              class="help-block">Please enter a valid email!</span>
+
+    </div>
+    <label for="gender">Gender</label>
+    <div class="radio" *ngFor="let gender of genders">
+        <label>
+          <input
+            type="radio"
+            formControlName="gender"
+           [value]="gender" >{{ gender }}
+        </label>
+      </div>
+
+
+    
+     <div class="form-group">
+        <label for= "address">Address</label>
+        <input formControlName="address" type="text" class="form-control" required placeholder="Address">
+        </div>
+        <div class="form-group">
+            <label for= "fullname">Position</label>
+            <input formControlName="position" type="text" class="form-control" required placeholder="Position">
+            </div>
+
+            <div class="form-group">
+                <label for= "mobileno">Mobile Number</label>
+                <input formControlName="mobileno" type="text" class="form-control" required placeholder="10 Digits MobileNo">
+                <span
+                *ngIf="!employeeForm.get('mobileno').valid && employeeForm.get('mobileno').touched"
+                class="help-block">
+                <span *ngIf="employeeForm.get('mobileno').errors.pattern">Please Enter Valid Mobile Number!</span>
+                <span *ngIf="employeeForm.get('mobileno').errors['required']">MobileNo cannot be empty!</span>
+                
+            
+              </span>
+            
+                </div>
+
+                <button class="btn btn-success btn-block btn-lg" type="submit"[disabled]="!employeeForm.valid">Submit
+                </button>
+</form>
+</div>
+</div>
+</div>
