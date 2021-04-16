@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EmplyoeeService } from 'src/app/emplyoee.service';
+
+import { EmployeeController } from '../employee.controller';
 
 
 @Component({
@@ -8,12 +9,15 @@ import { EmplyoeeService } from 'src/app/emplyoee.service';
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.css']
 })
-export class EmployeeListComponent implements OnInit {
+export class EmployeeListComponent extends EmployeeController implements OnInit {
   Employee: any = [];
 
-  constructor( public employeeService:EmplyoeeService,
-    public router: Router,
-    public route: ActivatedRoute)  { }
+  constructor( public injector:Injector,
+
+    public route: ActivatedRoute)  { 
+      super(injector)
+      
+    }
 
   ngOnInit(): void {
 
@@ -23,7 +27,7 @@ export class EmployeeListComponent implements OnInit {
   }
 
   loadEmployees(){
-    this.employeeService.getEmployees().subscribe(data=>{
+    this.emplyoeeService.getEmployees().subscribe(data=>{
       console.log(data);
       this.Employee=data;},err=>console.log(err) );
 
@@ -36,7 +40,7 @@ export class EmployeeListComponent implements OnInit {
 
 
   deleteEmployee(id){
-    this.employeeService.deleteEmployee(id).subscribe(data=>{
+    this.emplyoeeService.deleteEmployee(id).subscribe(data=>{
       this.loadEmployees();
     })
   }

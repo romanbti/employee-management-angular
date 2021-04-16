@@ -1,29 +1,27 @@
-import { formatDate } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router ,Params} from '@angular/router';
-
-import { EmplyoeeService } from 'src/app/emplyoee.service';
+import { EmployeeController } from '../employee.controller';
 
 @Component({
   selector: 'app-employee-form',
   templateUrl: './employee-form.component.html',
   styleUrls: ['./employee-form.component.css']
 })
-export class EmployeeFormComponent implements OnInit {
+export class EmployeeFormComponent extends EmployeeController implements OnInit {
   employeeForm:FormGroup;
   id = this.route.snapshot.params['id'];
   genders=['Male','Female'];
  
  
 
-  constructor(public fb:FormBuilder, public employeeService:EmplyoeeService,
-    public router:Router,
-    public route:ActivatedRoute) { }
+  constructor(public inj :Injector) 
+   {
+    super(inj)
+   }
 
   ngOnInit(): void {
     
-    this.employeeService.getEmployee(this.id).subscribe((data: {}) => {
+    this.emplyoeeService.getEmployee(this.id).subscribe((data: {}) => {
       this.employeeForm.patchValue(data);
     })
   
@@ -42,12 +40,12 @@ export class EmployeeFormComponent implements OnInit {
   onSubmit(){
     let formData = this.employeeForm.value;
     if(this.id){
-      this.employeeService.updateEmployee(this.id,formData).subscribe((data=>{
+      this.emplyoeeService.updateEmployee(this.id,formData).subscribe((data=>{
         this.router.navigate(['/employee-list']);
       }))
     }else{console.log(this.employeeForm.value);
       
-      this.employeeService.createEmployee(formData).subscribe((data:{}) => {
+      this.emplyoeeService.createEmployee(formData).subscribe((data:{}) => {
           this.router.navigate(['/employee-list']);
         
         },err=>console.log(err));
