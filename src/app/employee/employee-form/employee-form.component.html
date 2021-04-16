@@ -20,10 +20,10 @@
         <input formControlName="code" type="number" class="form-control" required placeholder="Code">
      </div>
      <div class="form-group">
-        <label for= "date">Joined Date </label> 
+        <label for= "joineddate">Joined Date </label> 
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker >
-        <input matInput [matDatepicker]="picker" formControlName="date" class="form-control date-picker" placeholder="Choose a date">
+        <input matInput [matDatepicker]="picker" formControlName="joineddate" class="form-control date-picker" placeholder="Choose a date">
        </div>
      <div class="form-group">
         <label for= "email">Email</label>
@@ -50,7 +50,7 @@
         <input formControlName="address" type="text" class="form-control" required placeholder="Address">
         </div>
         <div class="form-group">
-            <label for= "fullname">Position</label>
+            <label for= "position">Position</label>
             <input formControlName="position" type="text" class="form-control" required placeholder="Position">
             </div>
 

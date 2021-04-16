@@ -1,0 +1,37 @@
+
+
+<table class="center">
+    
+    <tr>
+    <th>SN</th>
+    <th>Name</th>
+    <th>Code</th>
+    <th>Joined Date</th>
+    <th>Email</th>
+    <th>Gender</th>
+    <th>Address</th>
+    <th>Position</th>
+    <th>Mobile Number</th>
+    <th>Update Employee</th>
+    <th>Delete Employee</th>
+    
+        
+
+    </tr>
+    <tr *ngFor="let column of Employee;let i=index">
+    <td>{{i+1}}</td>
+    <td>{{column.fullname}}</td>
+    <td>{{column.code}}</td>
+    <td>{{column.joineddate|date}}</td>
+    <td>{{column.email}}</td>
+    <td>{{column.gender}}</td>
+    <td>{{column.address}}</td>
+    <td>{{column.position}}</td>
+    <td>{{column.mobileno}}</td>
+    <td><a routerLink="/update/{{column.id}}"><button type="button" class="btn btn-success" >Update</button></a></td>
+  <td> <button type="button" class="btn btn-danger"(click)="deleteEmployee(column.id)">Delete</button></td>
+
+    
+    </tr></table>
+
+  
