@@ -3,7 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { AppController } from "../app.controller";
 import { EmplyoeeService } from "../emplyoee.service";
 
-export class EmployeeController extends AppController{
+export class DriController extends AppController{
     public emplyoeeService:EmplyoeeService;
     public route:ActivatedRoute;
     constructor(public inj:Injector){

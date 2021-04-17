@@ -1,5 +1,5 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {  FormGroup, Validators } from '@angular/forms';
 import { EmployeeController } from '../employee.controller';
 
 @Component({
@@ -41,16 +41,16 @@ export class EmployeeFormComponent extends EmployeeController implements OnInit 
     let formData = this.employeeForm.value;
     if(this.id){
       this.emplyoeeService.updateEmployee(this.id,formData).subscribe((data=>{
-        this.router.navigate(['/employee-list']);
+        this.router.navigate(['/dri/employee/employee-list']);
       }))
     }else{console.log(this.employeeForm.value);
       
       this.emplyoeeService.createEmployee(formData).subscribe((data:{}) => {
-          this.router.navigate(['/employee-list']);
+          this.router.navigate(['/dri/employee/employee-list']);
         
         },err=>console.log(err));
       
-      this.employeeForm.reset();}
+      }
   }
 
 }

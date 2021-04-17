@@ -21,7 +21,7 @@
     "@angular/platform-browser": "~11.1.2",
     "@angular/platform-browser-dynamic": "~11.1.2",
     "@angular/router": "~11.1.2",
-    "bootstrap": "^3.4.1",
+    "bootstrap": "^4.6.0",
     "json-server": "^0.16.3",
     "rxjs": "~6.6.0",
     "save": "^2.4.0",

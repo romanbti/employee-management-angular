@@ -1,5 +1,4 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 
 import { EmployeeController } from '../employee.controller';
 
@@ -12,9 +11,7 @@ import { EmployeeController } from '../employee.controller';
 export class EmployeeListComponent extends EmployeeController implements OnInit {
   Employee: any = [];
 
-  constructor( public injector:Injector,
-
-    public route: ActivatedRoute)  { 
+  constructor( public injector:Injector)  { 
       super(injector)
       
     }
