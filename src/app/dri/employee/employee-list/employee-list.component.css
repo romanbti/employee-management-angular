@@ -1,23 +1,26 @@
-th {
-  padding: 20px;
+.container{
+  margin-top: 30px;
+}
+thead{
   background-color: black;
-  border:1px solid rgb(255, 254, 252);
+}
+
+th{
   color: white;
-}
-
-td{
-    text-align:center;
-    padding: 5px;
-    
-    
-}
-
-.center {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  table, td {
-    border: 1px solid black;
-  }
-
+  padding: 10px;
+  text-align: center;
   
+}
+td{
+  color: white;
+  text-align:center;
+  padding: 5px;
+  background-color: rgb(36, 43, 43);
+  
+  
+}
+table {
+  border: 1px solid black;
+}
+
+

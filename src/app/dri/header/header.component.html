@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg bg-dark ">
   <a class="navbar-brand" href="#">Employee Management</a>
 
   <div class="collapse navbar-collapse">
@@ -8,8 +8,13 @@
         <a routerLinkActive="active" routerLink="/dri/employee/employee-list" >Employee List</a></li>
         <li >
           <a routerLinkActive="active"routerLink="/dri/employee/employee-form" >Employee Form</a></li>
-      
+     
     </ul>
+    
+      <ul class=" navbar-right">
+      <button type="button" class="btn btn-primary" (click)="onLogout()" >LogOut</button>
+      </ul>
+      
     </div>
    </nav>
  

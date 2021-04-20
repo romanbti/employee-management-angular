@@ -24,6 +24,8 @@ loginForm:FormGroup;
 
   onSubmit(){
     console.log(this.loginForm.value);
-    this.router.navigate(['/dri']);
+    sessionStorage.setItem('access_token','sdfsfefewfewfewfwefe')
+    sessionStorage.setItem('user',"{name:'Roman',email:'roman@gmail.com'}")
+    this.router.navigate(['/dri/employee/employee-list']);
   }
 }

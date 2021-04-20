@@ -1,7 +1,11 @@
+
 .nav{
-    background-color: rgb(80, 80, 235);
+    background-color: blue;
 }
 li{
     padding: 10px;
     
+}
+.navbar-right{
+    margin-left: auto;
 }

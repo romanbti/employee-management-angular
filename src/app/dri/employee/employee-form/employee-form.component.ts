@@ -1,11 +1,12 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Injector, OnInit, ViewEncapsulation } from '@angular/core';
 import {  FormGroup, Validators } from '@angular/forms';
 import { EmployeeController } from '../employee.controller';
 
 @Component({
   selector: 'app-employee-form',
   templateUrl: './employee-form.component.html',
-  styleUrls: ['./employee-form.component.css']
+  styleUrls: ['./employee-form.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class EmployeeFormComponent extends EmployeeController implements OnInit {
   employeeForm:FormGroup;
@@ -20,6 +21,8 @@ export class EmployeeFormComponent extends EmployeeController implements OnInit 
    }
 
   ngOnInit(): void {
+  
+    console.log(localStorage.getItem('user'))
     
     this.emplyoeeService.getEmployee(this.id).subscribe((data: {}) => {
       this.employeeForm.patchValue(data);

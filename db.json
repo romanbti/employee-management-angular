@@ -1,3 +1,26 @@
 {
-  "employees": []
+  "employees": [
+    {
+      "fullname": "Roman Bhattarai",
+      "code": 51,
+      "joineddate": "2021-04-18T18:15:00.000Z",
+      "email": "roman@gmail.com",
+      "gender": "Male",
+      "address": "pepsi",
+      "position": "kk",
+      "mobileno": "5455555556",
+      "id": 1
+    },
+    {
+      "fullname": "Roman Bhattarai",
+      "code": 51,
+      "joineddate": "2021-04-18T18:15:00.000Z",
+      "email": "roman@gmail.com",
+      "gender": "Male",
+      "address": "pepsi",
+      "position": "kk",
+      "mobileno": "5455555556",
+      "id": 2
+    }
+  ]
 }

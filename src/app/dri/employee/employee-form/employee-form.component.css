@@ -1,6 +1,16 @@
 
-  
+  body {
+    background-color: #21dbbc;}
+   
 
 input.ng-invalid.ng-touched{
     border: solid red 1px;
+}
+.main-content{
+	width: 80%;
+	border-radius: 20px;
+	box-shadow: 0 5px 5px rgba(0,0,0,.4);
+	margin: auto;
+    
+
 }

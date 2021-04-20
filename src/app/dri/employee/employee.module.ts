@@ -9,11 +9,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import{MatInputModule} from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
+import { FooterComponent } from '../footer/footer.component';
 
 
 
 @NgModule({
-  declarations: [EmployeeComponent, EmployeeListComponent,EmployeeFormComponent],
+  declarations: [EmployeeComponent, EmployeeListComponent,EmployeeFormComponent,FooterComponent],
   imports: [
     CommonModule,
     EmployeeRoutingModule,
